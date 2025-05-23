@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Lista de Modos</h1>
-
+    <a href="/modo/insert">Modo Insert</a>
     <table>
         <tr>
             <th>id</th>

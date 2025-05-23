@@ -7,5 +7,6 @@
     </head>
     <body>
         <h1>Olá Spring!!!</h1>
+        <a href="/modo/list">Modo List</a>
     </body>
 </html>
