@@ -1,5 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ taglib uri="jakarta.tags.core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,10 +11,13 @@
 </head>
 <body>
     <h1>Novo Modo</h1>
+
     <a href="/modo/list">Modo List</a>
+
     <form action="/modo/insert" method="post">
         <label for="descricao">Descricao</label>
         <input type="text" name="descricao">
+        
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
 </body>
