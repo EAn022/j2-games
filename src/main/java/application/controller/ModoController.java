@@ -62,4 +62,24 @@ public class ModoController {
 
         return "redirect:/modo/list";
     }
+
+    @RequestMapping(value = "/delete/{id}")
+    public String delete(@PathVariable long id,Model ui){
+        Optional<Modo> resultado = modoRepo.findById(id);
+
+        if (resultado.isPresent()) {
+            ui.addAttribute("modo", resultado.get());
+            
+            return "/modo/delete";
+        }
+
+        return "/modo/list";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(@RequestParam("id") long id){
+        modoRepo.deleteById(id);
+        
+        return "redirect:/modo/list";
+    }
 }

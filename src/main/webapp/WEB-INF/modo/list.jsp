@@ -23,7 +23,7 @@
                     <td>${modo.descricao}</td>
                     <td>
                         <a href="/modo/update/${modo.id}" class="btn btn-primary">Editar</a>
-                        <!-- <a href="" class="btn btn-danger">remover</a> -->
+                        <a href="/modo/delete/${modo.id}" class="btn btn-danger">remover</a>
                     </td>
                 </tr>
         </c:forEach>
