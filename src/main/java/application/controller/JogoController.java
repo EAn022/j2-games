@@ -77,7 +77,6 @@ public class JogoController {
 
             jogoRepo.save(jogo);
         }
-
         return "redirect:/jogo/insert";
     }
 }
