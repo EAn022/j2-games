@@ -9,5 +9,6 @@
         <h1>Olá Spring!!!</h1>
         <a href="/modo/list">Modo List</a>
         <a href="/genero/list">Genero List</a>
+        <a href="/plataforma/list">Plataforma List</a>
     </body>
 </html>

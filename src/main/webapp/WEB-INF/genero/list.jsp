@@ -10,7 +10,9 @@
 </head>
 <body>
     <h1>Lista de Generos</h1>
+
     <a href="/genero/insert">Genero Insert</a>
+    
     <table>
         <tr>
             <th>id</th>
