@@ -6,26 +6,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogos List</title>
 </head>
 <body>
-    <h1>Lista de Plataformas</h1>
+    <h1>Lista de Jogos</h1>
 
-    <a href="/plataforma/insert">Plataforma Insert</a>
+    <a href="/modo/insert">Jogo Insert</a>
     
     <table>
         <tr>
             <th>id</th>
-            <th>descricao</th>
+            <th>titulo</th>
             <th>-</th>
         </tr>
-        <c:forEach var="plataforma" items="${plataformas}">
+        <c:forEach var="jogo" items="${jogos}">
              <tr>
-                    <td>${plataforma.id}</td>
-                    <td>${plataforma.descricao}</td>
+                    <td>${jogo.id}</td>
+                    <td>${jogo.titulo}</td>
                     <td>
-                        <a href="/plataforma/update/${plataforma.id}" class="btn btn-primary">Editar</a>
-                        <a href="/plataforma/delete/${plataforma.id}" class="btn btn-danger">Remover</a>
+                        <a href="/jogo/update/${jogo.id}" class="btn btn-primary">Editar</a>
+                        <a href="/jogo/delete/${jogo.id}" class="btn btn-danger">Remover</a>
                     </td>
                 </tr>
         </c:forEach>

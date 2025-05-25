@@ -10,5 +10,6 @@
         <a href="/modo/list">Modo List</a>
         <a href="/genero/list">Genero List</a>
         <a href="/plataforma/list">Plataforma List</a>
+        <a href="/jogo/list">Jogo List</a>
     </body>
 </html>
