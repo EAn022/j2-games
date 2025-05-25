@@ -1,5 +1,6 @@
 package application.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,8 @@ public class JogoController {
 
     @RequestMapping(value = "/list")
     public String select(Model ui){
+        Iterable<Jogo> jogos = jogoRepo.findAll();
+        System.out.println("\n\n\n\n conteúdo: " + jogos);
         ui.addAttribute("jogos", jogoRepo.findAll());
 
         return "/jogo/list";
@@ -57,6 +60,7 @@ public class JogoController {
 
         if(resultModo.isPresent()){
             Jogo jogo = new Jogo();
+            jogo.setTitulo(titulo);
             jogo.setModo(resultModo.get());
             
             for (long id : idGeneros) {
@@ -71,12 +75,12 @@ public class JogoController {
                 Optional<Plataforma> resultPlataforma = plataformaRepo.findById(id);
 
                 if (resultPlataforma.isPresent()) {
-                    
+                    jogo.getPlataformas().add(resultPlataforma.get());
                 }
             }
+
+            jogoRepo.save(jogo);
         }
-        
-        
 
         return "redirect:/jogo/insert";
     }
