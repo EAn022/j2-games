@@ -29,4 +29,13 @@ public class JogoController {
 
         return "/jogo/list";
     }
+
+    @RequestMapping(value = "/insert")
+    public String insert(Model ui){
+        ui.addAttribute("plataformas", plataformaRepo.findAll());
+        ui.addAttribute("generos", generoRepo.findAll());
+        ui.addAttribute("modos", modoRepo.findAll());
+
+        return "redirect:/jogo/insert";
+    }
 }
