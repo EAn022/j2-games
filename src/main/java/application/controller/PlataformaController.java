@@ -65,4 +65,26 @@ public class PlataformaController {
 
         return "redirect:/plataforma/list";
     }
+
+    @RequestMapping(value = "/delete/{id}")
+    public String delete(@PathVariable long id, Model ui){
+        Optional<Plataforma> resultado = plataformaRepo.findById(id);
+
+        if(resultado.isPresent()){
+            ui.addAttribute("plataforma", resultado.get());
+
+            return "/plataforma/delete";
+        }
+        return "/plataforma/list";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(@RequestParam("id") long id){
+        Optional<Plataforma> resultado = plataformaRepo.findById(id);
+
+        if (resultado.isPresent()) {
+            plataformaRepo.deleteById(id);            
+        }
+        return "redirect:/plataforma/list";
+    }
 }

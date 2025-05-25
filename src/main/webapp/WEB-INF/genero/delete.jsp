@@ -13,7 +13,7 @@
     <a href="/genero/list">Genero List</a>
 
     <form action="/genero/delete" method="post">
-        <input type="text" name="id" value="${genero.id}">
+        <input type="hidden" name="id" value="${genero.id}">
 
         <label for="nome">Nome</label>
         <input type="text" name="nome" value="${genero.nome}">
