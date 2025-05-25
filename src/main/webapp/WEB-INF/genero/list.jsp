@@ -22,8 +22,8 @@
                     <td>${genero.id}</td>
                     <td>${genero.nome}</td>
                     <td>
-                        <!-- <a href="/genero/update/${genero.id}" class="btn btn-primary">Editar</a>
-                        <a href="/genero/delete/${genero.id}" class="btn btn-danger">remover</a> -->
+                        <a href="/genero/update/${genero.id}" class="btn btn-primary">Editar</a>
+                        <!-- <a href="/genero/delete/${genero.id}" class="btn btn-danger">remover</a> -->
                     </td>
                 </tr>
         </c:forEach>

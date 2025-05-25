@@ -13,8 +13,8 @@
     <a href="/genero/list">Genero list</a>
 
     <form action="/genero/insert" method="post">
-        <label for="name">Nome</label>
-        <input type="text" name="name">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome">
         
         <button type="submit">Salvar</button>
     </form>
