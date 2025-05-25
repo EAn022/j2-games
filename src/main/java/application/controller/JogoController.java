@@ -130,6 +130,7 @@ public class JogoController {
                         jogo.getGeneros().add(resultGenero.get());
                     }
                 }
+                jogoRepo.save(jogo);
             }
         }
         return "redirect:/jogo/list";

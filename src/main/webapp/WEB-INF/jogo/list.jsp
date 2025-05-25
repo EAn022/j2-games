@@ -28,10 +28,10 @@
                     <td>${jogo.titulo}</td> 
                     <td>${jogo.modo.descricao}</td>
                     <td>
-                        <c:forEach var="plataforma" items="${jogo.plataformas}">${plataforma.descricao}</c:forEach>
+                        <c:forEach var="plataforma" items="${jogo.plataformas}">${plataforma.descricao}, </c:forEach>
                     </td>
                     <td>
-                        <c:forEach var="genero" items="${jogo.generos}">${genero.nome}</c:forEach>
+                        <c:forEach var="genero" items="${jogo.generos}">${genero.nome}, </c:forEach>
                     </td>
                     <td>
                         <a href="/jogo/update/${jogo.id}" class="btn btn-primary">Editar</a>
