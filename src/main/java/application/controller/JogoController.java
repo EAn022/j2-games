@@ -1,6 +1,5 @@
 package application.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +32,6 @@ public class JogoController {
 
     @RequestMapping(value = "/list")
     public String select(Model ui){
-        Iterable<Jogo> jogos = jogoRepo.findAll();
-        System.out.println("\n\n\n\n conteúdo: " + jogos);
         ui.addAttribute("jogos", jogoRepo.findAll());
 
         return "/jogo/list";
@@ -54,7 +51,6 @@ public class JogoController {
                         @RequestParam("id_plataforma") long[] idPlataformas, 
                         @RequestParam("id_genero") long[] idGeneros,
                         @RequestParam("id_modo") long idModo){
-        
         
         Optional<Modo> resultModo = modoRepo.findById(idModo);
 

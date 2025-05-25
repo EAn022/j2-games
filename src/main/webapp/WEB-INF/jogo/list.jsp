@@ -17,30 +17,28 @@
         <tr>
             <th>id</th>
             <th>titulo</th>
+            <th>modo</th>
             <th>plataforma</th>
             <th>genero</th>
-            <th>modo</th>
             <th>-</th>
         </tr>
-        <!-- <c:forEach var="jogo" items="${jogos}">
+        <c:forEach var="jogo" items="${jogos}">
              <tr>
                     <td>${jogo.id}</td>
                     <td>${jogo.titulo}</td> 
+                    <td>${jogo.modo.descricao}</td>
                     <td>
                         <c:forEach var="plataforma" items="${jogo.plataformas}">${plataforma.descricao}</c:forEach>
                     </td>
                     <td>
                         <c:forEach var="genero" items="${jogo.generos}">${genero.nome}</c:forEach>
                     </td>
-                     <td>
-                        <c:forEach var="modo" items="${jogo.modo}">${modo.descricao}</c:forEach>
-                    </td>
                     <td>
                         <a href="/jogo/update/${jogo.id}" class="btn btn-primary">Editar</a>
                         <a href="/jogo/delete/${jogo.id}" class="btn btn-danger">Remover</a>
                     </td>
                 </tr>
-        </c:forEach> -->
+        </c:forEach>
     </table>
 </body>
 </html>
