@@ -117,7 +117,7 @@ public class JogoController {
 
                 for (long idPlataforma : idPlataformas) {
                     Optional<Plataforma> resultPlataforma = plataformaRepo.findById(idPlataforma);
-
+                    
                     if(resultPlataforma.isPresent()){
                         jogo.getPlataformas().add(resultPlataforma.get());
                     }
@@ -133,6 +133,26 @@ public class JogoController {
                 jogoRepo.save(jogo);
             }
         }
+        return "redirect:/jogo/list";
+    }
+
+    @RequestMapping(value = "/delete/{id}")
+    public String delete(@PathVariable long id, Model ui){
+        Optional<Jogo> resultado = jogoRepo.findById(id);
+
+        if (resultado.isPresent()) {
+            ui.addAttribute("jogo", resultado.get());
+
+            return "/jogo/delete";
+        }
+
+        return "/jogo/list";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(@RequestParam("id") long id){
+        jogoRepo.deleteById(id);
+
         return "redirect:/jogo/list";
     }
 }
