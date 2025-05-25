@@ -59,8 +59,31 @@ public class GeneroController {
 
         if(resultado.isPresent()){
             resultado.get().setNome(nome);
-
             generoRepo.save(resultado.get());
+        }
+
+        return "redirect:/genero/list";
+    }
+
+    @RequestMapping(value = "/delete/{id}")
+    public String delete(@PathVariable long id ,Model ui){
+        Optional<Genero> resultado = generoRepo.findById(id);
+
+        if(resultado.isPresent()){
+            ui.addAttribute("genero", resultado.get());
+
+            return "/genero/delete";
+        }
+
+        return "/genero/list";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String delete(@RequestParam("id") long id){
+        Optional<Genero> resultado = generoRepo.findById(id);
+
+        if (resultado.isPresent()) {
+            generoRepo.deleteById(resultado.get().getId());
         }
 
         return "redirect:/genero/list";

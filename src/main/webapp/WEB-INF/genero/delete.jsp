@@ -5,21 +5,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genero Update</title>
+    <title>Genero Delete</title>
 </head>
 <body>
-    <h1>Atualizar Genero</h1>
+    <h1>Deletar Genero</h1>
 
-    <a href="/modo/list">Modo List</a>
+    <a href="/genero/list">Genero List</a>
 
-    <form action="/genero/update" method="post">
-        <input type="hidden" name="id" value="${genero.id}">
+    <form action="/genero/delete" method="post">
+        <input type="text" name="id" value="${genero.id}">
 
-        <label for="name">Nome</label>
+        <label for="nome">Nome</label>
         <input type="text" name="nome" value="${genero.nome}">
 
-        <button type="submit">Salvar</button>
+        <button type="submit">Deletar</button>
     </form>
-
 </body>
 </html>
