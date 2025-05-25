@@ -1,10 +1,12 @@
 package application.controller;
 
+import java.util.HashSet;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -78,5 +80,58 @@ public class JogoController {
             jogoRepo.save(jogo);
         }
         return "redirect:/jogo/insert";
+    }
+
+    @RequestMapping(value = "/update/{id}")
+    public String update(@PathVariable long id, Model ui){
+        Optional<Jogo> resultado = jogoRepo.findById(id);
+
+        if(resultado.isPresent()){
+            ui.addAttribute("jogo", resultado.get());
+            ui.addAttribute("plataformas", plataformaRepo.findAll());
+            ui.addAttribute("generos", generoRepo.findAll());
+            ui.addAttribute("modos", modoRepo.findAll());
+            return "/jogo/update";
+        }
+        return "/jogo/list";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(@RequestParam("id") long id,
+                        @RequestParam("titulo") String titulo,
+                        @RequestParam("id_plataforma") long[] idPlataformas,
+                        @RequestParam("id_genero") long[] idGeneros,
+                        @RequestParam("id_modo") long idModo){
+        Optional<Jogo> resultJogo = jogoRepo.findById(id);
+        
+        if(resultJogo.isPresent()){
+            Jogo jogo = resultJogo.get();
+            jogo.setTitulo(titulo);
+            
+            Optional<Modo> resultModo = modoRepo.findById(idModo);
+            
+            if(resultModo.isPresent()){
+                jogo.setModo(resultModo.get());
+                jogo.setPlataformas(new HashSet<>());
+                jogo.setGeneros(new HashSet<>());
+
+                for (long idPlataforma : idPlataformas) {
+                    Optional<Plataforma> resultPlataforma = plataformaRepo.findById(idPlataforma);
+
+                    if(resultPlataforma.isPresent()){
+                        jogo.getPlataformas().add(resultPlataforma.get());
+                    }
+                }
+
+                for(long idGenero : idGeneros){
+                    Optional<Genero> resultGenero = generoRepo.findById(idGenero);
+
+                    if(resultGenero.isPresent()){
+                        jogo.getGeneros().add(resultGenero.get());
+                    }
+                }
+            }
+        }
+        return "redirect:/jogo/list";
     }
 }
