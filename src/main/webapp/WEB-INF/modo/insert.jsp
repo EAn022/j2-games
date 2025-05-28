@@ -15,8 +15,8 @@
     <a href="/modo/list">Modo List</a>
 
     <form action="/modo/insert" method="post">
-        <label for="descricao">Descricao</label>
-        <input type="text" name="descricao">
+        <label for="descricao" class="form-label">Descricao</label>
+        <input type="text" name="descricao" class="form-control">
         
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>

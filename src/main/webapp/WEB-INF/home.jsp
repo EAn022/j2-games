@@ -4,12 +4,28 @@
     <head>
         <meta charset="UTF-8" />
         <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Olá Spring!!!</h1>
-        <a href="/modo/list">Modo List</a>
-        <a href="/genero/list">Genero List</a>
-        <a href="/plataforma/list">Plataforma List</a>
-        <a href="/jogo/list">Jogo List</a>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/modo/list">Modos de Jogo | </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="/genero/list">Gêneros de Jogo | </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="/plataforma/list">Plataformas de Jogo | </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="/jogo/list">Jogos</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
     </body>
 </html>
