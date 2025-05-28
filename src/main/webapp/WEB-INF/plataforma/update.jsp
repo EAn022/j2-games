@@ -1,4 +1,4 @@
-<%@ page contentType = "text/html; charset = UTF-8" language = "java"%>
+<%@ page contentType = "text/html; charset=UTF-8" language = "java"%>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,17 +10,39 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Atualizar Plataforma</h1>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/modo/list">Modos de Jogo | </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="/genero/list">Gêneros de Jogo | </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="/plataforma/list">Plataformas de Jogo | </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="/jogo/list">Jogos</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
 
-    <a href="/plataforma/list">Plataforma List</a>
+    <section class="mx-3">
+        <h1>Atualizar Plataforma</h1>
 
-    <form action="/plataforma/update" method="post">
-        <input type="hidden" name="id" value="${plataforma.id}">
+        <a href="/plataforma/list">Plataforma List</a>
+        
+        <form action="/plataforma/update" method="post">
+            <input type="hidden" name="id" value="${plataforma.id}">
 
-        <label for="descricao" class="form-label">Descricao</label>
-        <input type="text" name="descricao" value="${plataforma.descricao}" class="form-control">
+            <label for="descricao" class="form-label">Descricao</label>
+            <input type="text" name="descricao" value="${plataforma.descricao}" class="form-control mb-3">
 
-        <button type="submit" class="btn btn-primary">Salvar</button>
-    </form>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </section>
 </body>
 </html>

@@ -31,26 +31,28 @@
         </div>
     </nav>
 
-    <h1>Lista de Generos</h1>
-
-    <a href="/genero/insert">Genero Insert</a>
-    
-    <table class="table">
-        <tr>
-            <th>id</th>
-            <th>nome</th>
-            <th>-</th>
-        </tr>
-        <c:forEach var="genero" items="${generos}">
-             <tr>
-                    <td>${genero.id}</td>
-                    <td>${genero.nome}</td>
-                    <td>
-                        <a href="/genero/update/${genero.id}" class="btn btn-primary">Editar</a>
-                        <a href="/genero/delete/${genero.id}" class="btn btn-danger">Remover</a>
-                    </td>
-                </tr>
-        </c:forEach>
-    </table>
+    <section class="mx-3">
+        <h1>Lista de Generos</h1>
+        
+        <a href="/genero/insert">Genero Insert</a>
+        
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>-</th>
+            </tr>
+            <c:forEach var="genero" items="${generos}">
+                 <tr>
+                        <td>${genero.id}</td>
+                        <td>${genero.nome}</td>
+                        <td>
+                            <a href="/genero/update/${genero.id}" class="btn btn-primary">Editar</a>
+                            <a href="/genero/delete/${genero.id}" class="btn btn-danger">Remover</a>
+                        </td>
+                    </tr>
+            </c:forEach>
+        </table>
+    </section>
 </body>
 </html>

@@ -30,17 +30,19 @@
         </div>
     </nav>
     
-    <h1>Deletar Genero</h1>
+    <section class="mx-3">
+        <h1>Deletar Genero</h1>
 
-    <a href="/genero/list">Genero List</a>
+        <a href="/genero/list">Genero List</a>
+        
+        <form action="/genero/delete" method="post">
+            <input type="hidden" name="id" value="${genero.id}">
 
-    <form action="/genero/delete" method="post">
-        <input type="hidden" name="id" value="${genero.id}">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" name="nome" value="${genero.nome}" class="form-control mb-3">
 
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" name="nome" value="${genero.nome}" class="form-control">
-
-        <button type="submit" class="btn btn-danger">Deletar</button>
-    </form>
+            <button type="submit" class="btn btn-danger">Deletar</button>
+        </form>
+    </section>
 </body>
 </html>

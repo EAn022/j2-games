@@ -30,15 +30,17 @@
         </div>
     </nav>
 
-    <h1>Novo Genero</h1>
-    
-    <a href="/genero/list">Genero list</a>
-
-    <form action="/genero/insert" method="post">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" name="nome" class="form-control">
+    <section class="mx-3">
+        <h1>Novo Genero</h1>
         
-        <button type="submit" class="btn btn-primary">Salvar</button>
-    </form>
+        <a href="/genero/list">Genero list</a>
+        
+        <form action="/genero/insert" method="post">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" name="nome" class="form-control mb-3">
+        
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </section>
 </body>
 </html>

@@ -30,18 +30,20 @@
         </div>
     </nav>
 
-    <h1>Atualizar Genero</h1>
+    <section class="mx-3">
+        <h1>Atualizar Genero</h1>
 
-    <a href="/modo/list">Modo List</a>
+        <a href="/modo/list">Modo List</a>
+        
+        <form action="/genero/update" method="post">
+            <input type="hidden" name="id" value="${genero.id}">
 
-    <form action="/genero/update" method="post">
-        <input type="hidden" name="id" value="${genero.id}">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" name="nome" value="${genero.nome}" class="form-control mb-3">
 
-        <label for="name" class="form-label">Nome</label>
-        <input type="text" name="nome" value="${genero.nome}" class="form-control">
-
-        <button type="submit" class="btn btn-primary">Salvar</button>
-    </form>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </section>
 
 </body>
 </html>
