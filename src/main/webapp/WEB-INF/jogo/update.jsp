@@ -35,33 +35,41 @@
         <h1>Atualizar Jogo</h1>
 
         <a href="/jogo/list">Jogo List</a>
-        
+
         <form action="/jogo/update" method="post">
             <input type="hidden" name="id" value="${jogo.id}">
 
-            <label for="titulo" class="form-label">Titulo</label>
-            <input type="text" name="titulo" value="${jogo.titulo}" class="form-control mb-3">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Titulo</label>
+                <input type="text" name="titulo" value="${jogo.titulo}" class="form-control mb-3">
+            </div>
             
-            <label for="id_modo" class="form-label">Modo</label>
-            <select name="id_modo">
-                <c:forEach var="modo" items="${modos}">
-                    <option value="${modo.id}" ${(jogo.modo.id == modo.id) ? "selected":""}>${modo.descricao}</option>
+            <div class="mb-3">
+                <label for="id_modo" class="form-label">Modo</label>
+                <select name="id_modo">
+                    <c:forEach var="modo" items="${modos}">
+                        <option value="${modo.id}" ${(jogo.modo.id == modo.id) ? "selected":""}>${modo.descricao}</option>
+                    </c:forEach>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label">Genero</label>><br>
+                <c:forEach var="genero" items="${generos}">
+                    <input type="checkbox" name="id_genero" value="${genero.id}" class="form-check-input" ${(jogo.generos.contains(genero)) ? "checked":""}>
+                    <label for="id_genero" class="form-check-label">${genero.nome}</label><br>
                 </c:forEach>
-            </select>
+            </div>
 
-            <label for="" class="form-label">Genero</label>
-            <c:forEach var="genero" items="${generos}">
-                <input type="checkbox" name="id_genero" value="${genero.id}" ${(jogo.generos.contains(genero)) ? "checked":""}>
-                <label for="id_genero">${genero.nome}</label>
-            </c:forEach>
+            <div class="mb-3">
+                <label for="" class="form-label">Plataforma</label><br>
+                <c:forEach var="plataforma" items="${plataformas}">
+                    <input type="checkbox" name="id_plataforma" value="${plataforma.id}" class="form-check-input" ${(jogo.plataformas.contains(plataforma)) ? "checked":""}>
+                    <label for="id_plataforma" class="form-check-label">${plataforma.descricao}</label><br>
+                </c:forEach>
+            </div>
 
-            <label for="" class="form-label">Plataforma</label>
-            <c:forEach var="plataforma" items="${plataformas}">
-                <input type="checkbox" name="id_plataforma" value="${plataforma.id}" ${(jogo.plataformas.contains(plataforma)) ? "checked":""}>
-                <label for="id_plataforma">${plataforma.descricao}</label>
-            </c:forEach>
-
-            <button type="submit">Salvar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
     </section>
 </body>
